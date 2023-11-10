@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-  <aside class="fixed bottom-0 z-20 h-full w-44">
+  <aside class="bottom-0 z-20 hidden h-full md:block sm:fixed sm:w-28 lg:w-44">
     <nav class="flex flex-col justify-end h-full">
       <ul class="grid gap-8 justify-items-center">
         <li>

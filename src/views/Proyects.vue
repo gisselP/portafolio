@@ -44,14 +44,11 @@
 
 <style lang="postcss" scoped>
 .proyects {
-  @apply py-32;
+  @apply py-32 h-full;
   background: linear-gradient(359.92deg, #ffedd8 8.5%, #fee6f2 94.69%);
 }
 .proyects article{
-  @apply relative z-20 flex flex-col items-center;
-  margin: 0px auto;
-  max-width: 1000px;
-  height: 100vh;
+  @apply  flex flex-col h-full; 
 }
 .proyectos {
   border-color: #2c3e50;

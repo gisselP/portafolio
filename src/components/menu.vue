@@ -3,21 +3,20 @@ import Presentation from "../views/Presentation.vue";
 import About from "../views/About.vue";
 import Proyects from "../views/Proyects.vue";
 import Experience from "../views/Experience.vue";
-
 </script>
 
-<template class="main">
-  <main class="flex flex-col">
-    <section class="">
-      <Presentation />
-   
-      <About />
-    
-      <Proyects />
-  
-      <Experience />
-    </section>
+<template>
+  <main>
+    <Presentation/>
+    <About />
+    <Proyects />
+    <Experience />
   </main>
 </template>
 
-<style lang="scss"></style>
+<style lang="postcss">
+main > * {
+  @apply flex items-center px-7 lg:px-40 md:px-28 xl:px-60;
+  height: 100vh;
+}
+</style>

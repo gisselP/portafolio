@@ -1,8 +1,8 @@
 <script setup>
-import Header from "./components/header.vue";
-import Left from "./components/left.vue";
-import Menu from "./components/menu.vue";
-
+import Header from './components/Header.vue';
+import Left from "./components/Left.vue"
+import Menu from "./components/Menu.vue";
+import Sidebar from "./components/Sidebar.vue"
 </script>
 
 <template>
@@ -10,6 +10,7 @@ import Menu from "./components/menu.vue";
     <Header />
     <Left />
     <Menu />
+    <Sidebar/>
   </body>
 </template>
 
@@ -37,19 +38,26 @@ nav {
   }
 }
 
-.grilla {
-  display: grid;
-  grid-template-columns: 1fr 6fr 1fr;
-  background: linear-gradient(0deg, #faebdb 4.93%, #fbdddb 88.77%);
+::-webkit-scrollbar {
+  width: 12px;
 }
-.aside {
-  grid-column-start: 1;
+::-webkit-scrollbar * {
+  background: transparent;
 }
-.blue {
-  background: blue;
-  display: fixed;
-  height: 100vh;
-  margin-left: auto;
-  margin-right: auto;
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(254, 249, 249, 0.69);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #b30000;
 }
 </style>

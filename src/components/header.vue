@@ -1,8 +1,11 @@
 <script setup></script>
 
-<template class="main">
-  <header>
-    <nav class="fixed top-0 right-0 z-20 w-full gap-6 px-16">
+<template>
+  <header class="fixed top-0 right-0 z-20 w-full gap-6 px-16">
+    <section class="absolute top-0 right-0 md:hidden">
+      <img class="p-7" src="../assets/toggle.svg" height="80px" width="80px" />
+    </section>
+    <nav class="hidden md:block">
       <ul class="flex items-center justify-end gap-8 text-sm">
         <li>
           <a href="/presentation" class="flex items-center gap-2">
