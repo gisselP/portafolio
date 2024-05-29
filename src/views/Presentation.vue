@@ -1,17 +1,19 @@
 <template>
   <section class="presentation">
-    <section class="flex flex-col items-start justify-center gap-4">
-      <p class="text-sm font-medium xl:mr-64 lg:text-lg">Hola, mi nombre es</p>
-      <h1>Gissel Peña <span class="hidden md:inline">Chávez</span></h1>
+    <section class="content-presentation">
+      <p class="pre-title">Hola , mi nombre es</p>
+      <h1>Gissel Peña Chávez</h1>
       <p class="subtitle">
-        Explorando y construyendo experiencias web con empatía
+        Diseño web fiel al concepto, eficaz y humano
       </p>
-      <p class="pt-3 text-sm font-medium xl:mr-64 lg:text-lg">
-        Soy una <span class="font-bold">front-end developer</span> curiosa y dedicada a comprender las necesidades de los usuarios para ofrecer soluciones
-        efectivas y sostenibles.
-        ¡Echa un vistazo a mi
-        trabajo!
-      </p>
+      <div class="text-base flex flex-col gap-2 pr-12">
+        <p>
+          <span class="font-semibold">Desarrolladora Front-End</span> apasionada por la precisión visual, comprometida con la <span class="font-semibold">creación de interfaces web eficaces y sostenibles. </span>       
+        </p>
+        <p>
+          Valoro profundamente las conexiones, tanto en el código como con mi equipo, y me esfuerzo por fomentar un ambiente de trabajo colaborativo y ameno.      
+        </p>
+      </div>
       <button @click="scrollToAbout">Cónoceme más</button>
     </section>
   </section>
@@ -32,24 +34,33 @@ const scrollToAbout = () => {
 <style lang="postcss" scoped>
 .presentation {
   height: 100vh;
-  background: linear-gradient(0deg, #e6ebfe 4.93%, #b4c3fe 88.77%);
+  background: linear-gradient( #091d27, #103F50);
+}
+
+.content-presentation {
+  @apply grid place-content-center relative z-20 gap-4;
+  width: 880px;
 }
 
 h1 { 
-  @apply  text-5xl lg:text-6xl font-bold;
-  font-family: "Raleway", sans-serif;
-  line-height: 1;
+  @apply text-6xl font-semibold;
+  font-family: "Montserrat", sans-serif;
+  font-style: italic;
+}
+.pre-title{
+  @apply font-bold xl:mr-64 text-base;
 }
 
 .subtitle {
   @apply text-2xl leading-7 md:text-4xl opacity-70;
-  font-family: "Raleway", sans-serif;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
 }
 
 button {
-  @apply py-2 px-4 md:px-5 md:py-3 mt-12 lg:w-60 md:text-lg xl:text-xl rounded-md font-bold;
-  border-color: #2c3e50;
-  border-width: 3px;
+  @apply h-16 w-60 font-bold rounded-lg text-xl mt-8;
+  border-color: #51BAB6;
+  border-width: 4px;
 }
 
 button:hover {

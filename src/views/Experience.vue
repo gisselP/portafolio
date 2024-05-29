@@ -1,13 +1,13 @@
 <template>
   <section class="experience">
-    <article>
-      <section class="flex flex-col justify-center gap-2 my-auto">
+    <article class="relative">
+      <section class="z-10 flex flex-col justify-center gap-2 my-auto">
         <p class="text-lg font-bold">Experiencia</p>
         <h1 class="text-6xl">Front end Developer</h1>
         <p class="text-lg font-bold">
           InLearning Institutos | Enero 2022 -Actualidad
         </p>
-        <ul class="mt-6 ml-20">
+        <ul class="mt-6 ml-5 text-sm md:ml-20 md:text-base">
           <li>
             • Maquetar nuevas vistas con Tailwind implementando responsive
             design.
@@ -22,7 +22,7 @@
           </li>
         </ul>
       </section>
-      <img class="absolute bottom-0 right-60" src="../assets/tree.svg" width="380" />
+      <img class="absolute right-0 w-40 sm:w-56 lg:w-80 xl:w-96 -bottom-2" src="../assets/trees.svg"  />
     </article>
   </section>
 </template>
@@ -33,15 +33,17 @@ export default {};
 
 <style lang="postcss" scoped>
 .experience {
-  @apply relative;
+  @apply overflow-hidden;
   height: 100vh;
-  background: linear-gradient(357.86deg, #cdeec1 6.39%, #ffedd8 87.78%);
+  background: linear-gradient(#68AFB8, #BAE5DB);
 }
 .experience article {
   @apply grid items-center w-full h-full;
 }
-h1 {
+h1 { 
+  @apply  text-5xl lg:text-6xl font-bold;
   font-family: "Raleway", sans-serif;
-  @apply text-6xl;
+  line-height: 1;
 }
+
 </style>

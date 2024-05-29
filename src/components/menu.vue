@@ -15,8 +15,11 @@ import Experience from "../views/Experience.vue";
 </template>
 
 <style lang="postcss">
-main > * {
+main > *{
+  @apply place-items-center grid; 
+}
+/* main > * {
   @apply flex items-center px-7 lg:px-40 md:px-28 xl:px-60;
   height: 100vh;
-}
+} */
 </style>

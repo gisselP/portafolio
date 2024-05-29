@@ -1,12 +1,14 @@
 <script setup>
-import Header from './components/Header.vue';
+import Header from './components/HeaderComponent.vue';
 import Left from "./components/Left.vue"
 import Menu from "./components/Menu.vue";
 import Sidebar from "./components/Sidebar.vue"
+import Background from "./components/Background.vue"
 </script>
 
 <template>
   <body>
+    <Background/>
     <Header />
     <Left />
     <Menu />
@@ -17,25 +19,23 @@ import Sidebar from "./components/Sidebar.vue"
 <style lang="scss">
 @import "tailwindcss/base";
 @import "tailwindcss/utilities";
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Raleway:wght@700&display=swap");
-#app {
-  font-family: "Poppins", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:wght@100..900&display=swap');
+
+body{
+  @apply h-full relative;
+  color: #fdefc1;
+  font-family: "Raleway", sans-serif;
+}/* 
+.text-blue-dark{
+  color: #2C3E50;
 }
 
-nav {
-  padding: 30px;
+.text-wine-ligth{
+  color: #EF959D;
+}
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+.text-wine-dark{
+  color: #811E0E;
 }
 
 ::-webkit-scrollbar {
@@ -45,19 +45,16 @@ nav {
   background: transparent;
 }
 
-/* Track */
-::-webkit-scrollbar-track {
+ ::-webkit-scrollbar-track {
   border-radius: 10px;
 }
 
-/* Handle */
-::-webkit-scrollbar-thumb {
+ ::-webkit-scrollbar-thumb {
   background: rgba(254, 249, 249, 0.69);
   border-radius: 10px;
 }
 
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
+ ::-webkit-scrollbar-thumb:hover {
   background: #b30000;
-}
+} */
 </style>
