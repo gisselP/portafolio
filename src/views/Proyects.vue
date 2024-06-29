@@ -2,109 +2,100 @@
 import { ref } from "vue";
 const proyects = ref([
   {
-    description:'Descripción de eva',
-    plataforms:'Angular Firebase',
-    imgs: [
-      'login',
-      'comunidad',
-      'notification',
-    ]
+    title: "Eva",
+    description:
+      "Es un portal integral para estudiantes, docentes y personal administrativo. Ofrece servicios como <b>consulta de horarios, acceso a trámites, marcación de asistencia e información relevante,</b> con vistas personalizadas para cada usuario.<br> Diseñado para mejorar la gestión académica y administrativa.",
+    resources: ["Javascript", "HTML & CSS", "Tailwind", "Vue 3", "API REST"],
+    imgs: "image1",
   },
   {
-    description:'Es una interfaz para un restaurante en el cual se pueden tomarpedidos, enviarlos al carrito de compras y también cambiar sus estados consumiendo una API proporcionado por el cliente.',
-    plataforms:'Angular API Postman',
-    imgs: [
-      'comunidad',
-      'comunidad',
-      'comunidad',
-    ]
-  },
-  {
-    description:' Es una red social tematizada para personas amantes de los gatos que permite crear y compartir contenido. En él se implementó el sistema CRUD y la autenticación de usuarios con Firebase.',
-    plataforms:'Javascript CSS HTML SPA Firebase',
-    imgs: [
-      'comunidad',
-      'comunidad',
-      'comunidad',
-    ]
-  }
-])
+    title: "Burger Queen",
 
+    description:
+      "Es una interfaz para un restaurante en el cual se pueden tomarpedidos, enviarlos al carrito de compras y también cambiar sus estados consumiendo una API proporcionado por el cliente.",
+    resources: ["Angular", "API REST", "Postman"],
+    imgs: "image4",
+  },
+  {
+    title: "Only Cats",
+    description:
+      " Es una red social tematizada para personas amantes de los gatos que permite crear y compartir contenido. En él se implementó el sistema CRUD y la autenticación de usuarios con Firebase.",
+    resources: ["Javascript", "HTML & CSS", "SPA", "Firebase"],
+    imgs: "image3",
+  },
+]);
 </script>
 <template>
   <section class="proyects">
-    <article>
-      <p class="text-xl font-bold">Proyectos</p>
-      <article class="grid grid-cols-1 grid-rows-3 gap-20 pt-3 mt-6">
-        <section v-for="(item, index) in proyects" :key="item" class="grid items-center justify-between grid-cols-2 gap-9">
-          <section class="slider" :class="index % 2 === 0 ? 'order-1 mr-auto ':'order-2'"> 
-            <div class="slides">
-              <template v-for="image in item.imgs" :key="image">
-                <img :src="require(`@/assets/${image}.png`)" class="slide" />
-              </template> 
-           </div>
-           <div class="overlay"></div>
-          </section>
-          <p class="text-sm md:text-base" :class="index % 2 === 0 ? 'order-2 text-right':'order-1'">
-            {{ item.description}}
-            <br />
-            <span>{{ item.plataforms}}</span>
-          </p>
+    <article class="content-proyects">
+      <p class="title-header">Proyectos</p>
+      <article class="grid grid-cols-1 grid-rows-3 gap-24 pt-3 mt-6">
+        <section
+          v-for="(item, index) in proyects"
+          :key="item"
+          class="grid items-center justify-between gap-6"
+          :class="
+            index % 2 === 0 ? 'grid-cols-auto-fit ' : 'grid-cols-fit-auto '
+          "
+        >
+          <inline-svg
+            :src="require(`@/assets/proyects/${item.imgs}.svg`)"
+            :class="index % 2 === 0 ? 'sm:order-2 sm:text-right' : 'sm:order-1'"
+            class="image-svg"
+          ></inline-svg>
+          <div
+            class="text-sm"
+            :class="
+              index % 2 === 0
+                ? 'sm:order-1 sm:text-left'
+                : 'sm:order-2 sm:text-right'
+            "
+          >
+            <p class="font-bold text-base">{{ item.title }}</p>
+            <p v-html="item.description" class="my-2"></p>
+            <p
+              class="flex flex-row flex-wrap gap-3"
+              :class="index % 2 === 0 ? 'sm:justify-start' : 'sm:justify-end'"
+            >
+              <span v-for="i in item.resources" :key="i">{{ i }}</span>
+            </p>
+          </div>
         </section>
       </article>
     </article>
-    
   </section>
 </template>
 
 <style lang="postcss" scoped>
 .proyects {
   @apply py-32 h-full;
-  background: linear-gradient(#1c7891, #68AFB8);
+  background: linear-gradient(#1c7891, #68afb8);
 }
-.proyects article{
-  @apply  flex flex-col h-full; 
+.content-proyects {
+  @apply mx-6 lg:mx-0;
+  max-width: 880px;
 }
-span{
-  @apply text-sm font-bold inline-block pt-2.5;
-} 
-.slider {
-  border-color: #2c3e50;
-  border-width: 6px;
-  height: 38vh;
-  @apply overflow-hidden rounded-xl relative ;
+.proyects article {
+  @apply flex flex-col h-full;
 }
-.slides {
-  display: flex;
-/*   transition: transform 1s ease-in-out; */
+span {
+  @apply text-sm font-bold inline-block;
 }
-
-.slide {
-  width: 100%;
-  flex: 0 0 auto;
+.title-proyect {
+  @apply font-bold text-base;
+  font-family: "Montserrat", sans-serif;
 }
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4));
-  transition: opacity 0.5s ease; 
-  pointer-events: none;
+.image-svg {
+  @apply mx-auto sm:m-0 lg:h-64 w-60 h-auto lg:w-full sm:max-w-full shadow-2xl;
 }
-.slider:hover .slides {
-  @apply opacity-100;
-  animation: slideAnimation 6s  infinite;
+@screen sm {
+  .grid-cols-auto-fit {
+    @apply gap-12;
+    grid-template-columns: 1fr auto;
+  }
+  .grid-cols-fit-auto {
+    @apply gap-12;
+    grid-template-columns: auto 1fr;
+  }
 }
-.slider:hover .overlay {
-  opacity: 0;
-}
-@keyframes slideAnimation {
-  0%, 33% { transform: translateX(0); }
-  33%, 66% { transform: translateX(-100%); }
-  66%, 100% { transform: translateX(-200%); } 
-}
-
-
 </style>

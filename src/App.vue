@@ -25,7 +25,27 @@ body{
   @apply h-full relative;
   color: #fdefc1;
   font-family: "Raleway", sans-serif;
-}/* 
+}
+.title-header{
+  @apply text-base md:text-xl font-bold;
+  font-family: "Montserrat", sans-serif;
+  font-style: italic;
+}  
+
+.title-monserrat {
+  @apply font-semibold text-3xl sm:text-5xl;
+  line-height: 1;
+  font-family: "Montserrat", sans-serif;
+  font-style: italic;
+}
+
+@screen md {
+  .title-monserrat {
+    font-size: 55px;
+    line-height: 1;
+  }
+}
+  /* 
 .text-blue-dark{
   color: #2C3E50;
 }

@@ -8,8 +8,8 @@ import Experience from "../views/Experience.vue";
 <template>
   <main>
     <Presentation/>
-    <About />
-    <Proyects />
+<About />
+ <Proyects />
     <Experience />
   </main>
 </template>

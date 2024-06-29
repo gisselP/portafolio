@@ -26,7 +26,7 @@ const headerItems = ref([
       <img class="p-7" src="../assets/toggle.svg" height="80px" width="80px" />
     </section>
     <nav class="hidden md:block">
-      <ul class="flex items-center justify-end gap-10 h-20 text-sm px-20">
+      <ul class="flex items-center justify-end h-24 gap-10 px-20 text-sm">
         <li v-for="item of headerItems" :key="item">
           <a :href="`/${item.link}`"> 
             <inline-svg :src="require(`@/assets/${item.icon}.svg`)"></inline-svg>

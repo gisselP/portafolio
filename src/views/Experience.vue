@@ -1,29 +1,29 @@
 <template>
   <section class="experience">
-    <article class="relative">
-      <section class="z-10 flex flex-col justify-center gap-2 my-auto">
-        <p class="text-lg font-bold">Experiencia</p>
-        <h1 class="text-6xl">Front end Developer</h1>
-        <p class="text-lg font-bold">
-          InLearning Institutos | Enero 2022 -Actualidad
+    <section class="content-experience">
+      <section class="flex flex-col justify-center gap-2 my-auto">
+        <p class="title-header">Experiencia</p>
+        <h1 class=" title-monserrat">Front end Developer</h1>
+        <p class="text-md md:text-lg font-bold">
+          InLearning Institutos <span class="hidden sm:inline-block">| Enero 2022 -Actualidad</span>
         </p>
-        <ul class="mt-6 ml-5 text-sm md:ml-20 md:text-base">
+        <ul class="z-20 mt-6 ml-5 flex flex-col font-normal gap-1 text-sm md:ml-20 md:text-base">
           <li>
-            • Maquetar nuevas vistas con Tailwind implementando responsive
+            Maquetar nuevas vistas con Tailwind implementando responsive
             design.
           </li>
-          <li>• Desarrollar interfaces dinámicas y funcionales con Vue 3.</li>
-          <li>• Realizar integraciones con servicios API Rest.</li>
+          <li> Desarrollar interfaces dinámicas y funcionales con Vue 3.</li>
+          <li> Realizar integraciones con servicios API Rest.</li>
           <li>
-            • Identificar y solucionar con eficacia incidencias en el código.
+            Identificar y solucionar con eficacia incidencias en el código.
           </li>
           <li>
-            • Coordinar con el equipo de backend las integraciones requeridas.
+             Coordinar con el equipo de backend las integraciones requeridas.
           </li>
         </ul>
       </section>
-      <img class="absolute right-0 w-40 sm:w-56 lg:w-80 xl:w-96 -bottom-2" src="../assets/trees.svg"  />
-    </article>
+      <img class="palm" src="../assets/palm.svg"  alt="palm"/>
+    </section>
   </section>
 </template>
 
@@ -33,17 +33,20 @@ export default {};
 
 <style lang="postcss" scoped>
 .experience {
-  @apply overflow-hidden;
   height: 100vh;
   background: linear-gradient(#68AFB8, #BAE5DB);
+}
+.content-experience{
+  @apply mx-6 lg:mx-0 w-full;
+  max-width: 880px;
+  color: #186E86;
 }
 .experience article {
   @apply grid items-center w-full h-full;
 }
-h1 { 
-  @apply  text-5xl lg:text-6xl font-bold;
-  font-family: "Raleway", sans-serif;
-  line-height: 1;
+.palm {
+  @apply absolute bottom-0 mx-auto w-40 h-auto md:w-96 sm:max-w-full;
+  right: 10%;
 }
 
 </style>

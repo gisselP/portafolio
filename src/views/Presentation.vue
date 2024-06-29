@@ -2,16 +2,17 @@
   <section class="presentation">
     <section class="content-presentation">
       <p class="pre-title">Hola , mi nombre es</p>
-      <h1>Gissel Peña Chávez</h1>
-      <p class="subtitle">
-        Diseño web fiel al concepto, eficaz y humano
-      </p>
-      <div class="text-base flex flex-col gap-2 pr-12">
+      <h1 class="title-monserrat">Gissel Peña Chávez</h1>
+      <p class="subtitle">Diseño web fiel al concepto, eficaz y humano</p>
+      <div class="flex flex-col gap-2 pr-12 leading-6 text-sm md:text-base font-light">
         <p>
-          <span class="font-semibold">Desarrolladora Front-End</span> apasionada por la precisión visual, comprometida con la <span class="font-semibold">creación de interfaces web eficaces y sostenibles. </span>       
-        </p>
-        <p>
-          Valoro profundamente las conexiones, tanto en el código como con mi equipo, y me esfuerzo por fomentar un ambiente de trabajo colaborativo y ameno.      
+          <span class="font-medium">Desarrolladora Front-End</span> apasionada
+          por la precisión visual, comprometida con la
+          <span class="font-medium">
+            creación de interfaces web eficaces y sostenibles.
+          </span>
+          <span class="hidden sm:inline-block">Valoro el trabajo y la colaboración con mi equipo, y me esfuerzo por
+          fomentar un ambiente de trabajo colaborativo y ameno.</span>
         </p>
       </div>
       <button @click="scrollToAbout">Cónoceme más</button>
@@ -34,32 +35,29 @@ const scrollToAbout = () => {
 <style lang="postcss" scoped>
 .presentation {
   height: 100vh;
-  background: linear-gradient( #091d27, #103F50);
+  background: linear-gradient(#091d27, #103f50);
 }
 
 .content-presentation {
-  @apply grid place-content-center relative z-20 gap-4;
-  width: 880px;
+  @apply grid place-content-center relative z-20 mx-6 gap-3.5 lg:mx-0;
+  max-width: 880px;
+}
+.pre-title {
+  @apply font-light;
+  font-family: "Montserrat", sans-serif;
 }
 
-h1 { 
-  @apply text-6xl font-semibold;
-  font-family: "Montserrat", sans-serif;
-  font-style: italic;
-}
-.pre-title{
-  @apply font-bold xl:mr-64 text-base;
-}
 
 .subtitle {
-  @apply text-2xl leading-7 md:text-4xl opacity-70;
+  @apply hidden sm:block text-lg sm:text-2xl leading-6 md:leading-7 md:text-3xl opacity-70;
   font-family: "Montserrat", sans-serif;
   font-style: normal;
 }
 
+
 button {
-  @apply h-16 w-60 font-bold rounded-lg text-xl mt-8;
-  border-color: #51BAB6;
+  @apply h-16 w-60 font-bold rounded-lg text-xl mt-2 md:mt-8;
+  border-color: #51bab6;
   border-width: 4px;
 }
 
@@ -69,5 +67,4 @@ button:hover {
   border-width: 3px;
   @apply xl:px-5 xl:py-3 xl:text-xl rounded-md font-bold;
 }
-
 </style>
