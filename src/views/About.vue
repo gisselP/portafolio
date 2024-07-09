@@ -1,10 +1,10 @@
 <template>
   <article id="about" class="about">
-    <section class="content-about">
+    <section class="content content-about">
       <section class="flex flex-col items-start gap-3 md:gap-5">
           <p class="title-header">Sobre mí</p>
           <div
-            class="grid gap-2 md:gap-4 text-sm md:text-base"
+            class="grid gap-2 text-sm md:gap-4 md:text-base"
           >
             <p>
               ¡Hola de nuevo! Soy Gissel, tengo 24 años y me considero una persona
@@ -39,8 +39,7 @@
   background: linear-gradient(#103F50,#1c7891);
 }
 .content-about{
-  @apply flex relative flex-col md:flex-row z-20 gap-10 md:gap-20 mx-6 lg:mx-0;
-  max-width: 880px;
+  @apply flex relative flex-col md:flex-row z-20 gap-10 md:gap-20 ;
 }
 .transition-image {
   @apply block mx-auto w-40 h-auto lg:w-full md:max-w-full;

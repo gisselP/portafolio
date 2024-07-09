@@ -3,17 +3,17 @@ import { ref } from 'vue'
 
 const headerItems = ref([
   {
-    link: 'presentation',
+    link: 'about',
     icon: 'union',
     text: 'Sobre mí'
   },
   {
-    link: 'about',
+    link: 'projects',
     icon: 'earth',
     text: 'Proyectos'
   },
   {
-    link: 'proyects',
+    link: 'experience',
     icon: 'ship',
     text: 'Experiencia'
   }
@@ -28,7 +28,7 @@ const headerItems = ref([
     <nav class="hidden md:block">
       <ul class="flex items-center justify-end h-24 gap-10 px-20 text-sm">
         <li v-for="item of headerItems" :key="item">
-          <a :href="`/${item.link}`"> 
+          <a :href="`#${item.link}`">
             <inline-svg :src="require(`@/assets/${item.icon}.svg`)"></inline-svg>
             {{item.text}}
           </a>
@@ -39,7 +39,10 @@ const headerItems = ref([
 </template>
 <style lang="postcss" scoped>
 ul li > a {
-  @apply flex items-center gap-2 font-medium ;
+  @apply flex items-center gap-2 font-medium;
   font-family: "Montserrat";
+}
+ul li > a:hover {
+  color: #e9d38b;
 }
 </style>

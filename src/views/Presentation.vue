@@ -1,10 +1,10 @@
 <template>
-  <section class="presentation">
-    <section class="content-presentation">
+  <section id="presentation" class="presentation">
+    <section class="content content-presentation">
       <p class="pre-title">Hola , mi nombre es</p>
       <h1 class="title-monserrat">Gissel Peña Chávez</h1>
       <p class="subtitle">Diseño web fiel al concepto, eficaz y humano</p>
-      <div class="flex flex-col gap-2 pr-12 leading-6 text-sm md:text-base font-light">
+      <div class="flex flex-col gap-2 text-sm font-light leading-6 sm:pr-12 md:text-base">
         <p>
           <span class="font-medium">Desarrolladora Front-End</span> apasionada
           por la precisión visual, comprometida con la
@@ -22,10 +22,8 @@
 
 <script setup>
 const scrollToAbout = () => {
-  // Obtener el elemento "About" por su ID o clase
   const aboutSection = document.querySelector("#about"); // Suponiendo que tiene un ID llamado "about"
 
-  // Hacer scroll hacia el elemento "About"
   if (aboutSection) {
     aboutSection.scrollIntoView({ behavior: "smooth" }); // Usa "smooth" para una transición suave
   }
@@ -39,32 +37,33 @@ const scrollToAbout = () => {
 }
 
 .content-presentation {
-  @apply grid place-content-center relative z-20 mx-6 gap-3.5 lg:mx-0;
-  max-width: 880px;
+  @apply grid place-content-center relative z-20 gap-3.5 justify-items-start;
 }
+
 .pre-title {
   @apply font-light;
   font-family: "Montserrat", sans-serif;
 }
 
-
 .subtitle {
-  @apply hidden sm:block text-lg sm:text-2xl leading-6 md:leading-7 md:text-3xl opacity-70;
+  @apply hidden sm:block text-lg sm:text-2xl leading-6 md:leading-7 lg:text-3xl opacity-70;
   font-family: "Montserrat", sans-serif;
   font-style: normal;
 }
 
 
 button {
-  @apply h-16 w-60 font-bold rounded-lg text-xl mt-2 md:mt-8;
+  @apply px-12 py-2 md:py-3 font-bold rounded-lg lg:text-lg mt-2;
   border-color: #51bab6;
-  border-width: 4px;
+  border-width: 3px;
 }
 
 button:hover {
-  color: white;
+  color: #95edea;
   background-color: #2c3e50;
   border-width: 3px;
-  @apply xl:px-5 xl:py-3 xl:text-xl rounded-md font-bold;
+  box-shadow: 0 1px 30px 0 #95edea;
+  transition: box-shadow 0.3s ease; 
+  @apply px-12 py-2 md:py-3 font-bold rounded-lg lg:text-lg mt-2;
 }
 </style>

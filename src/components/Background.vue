@@ -7,7 +7,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <article class="h-full w-full">
+  <article class="w-full h-full">
     <inline-svg
       :src="require(`@/assets/background/moon.svg`)"
       class="icon moon"
@@ -269,13 +269,26 @@ const props = defineProps({
   top: 32%;
 }
 .twenty {
-  @apply hidden sm:inline-block h-96;
-  left: 5%;
-  top: 35%;
+  @apply hidden sm:inline-block h-80;
+  left: 0%;
+  top: 38%;
 }
+
 .planet4 {
   right: 5%;
-  bottom: 45%;
+  bottom: 42%;
+}
+
+@screen md{
+  .twenty {
+    @apply hidden sm:inline-block h-96;
+    left: 5%;
+    top: 35%;
+  }
+  .planet4 {
+    right: 5%;
+    bottom: 45%;
+  }
 }
 .twenty-one {
   @apply h-3;
